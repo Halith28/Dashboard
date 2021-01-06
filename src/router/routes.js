@@ -1,8 +1,8 @@
-const routes={
-    login : '/login',
-    signup : '/signup',
-    home : '/home',
-    profile : '/profile',
-}
+const routes = {
+  login: "/login",
+  signup: "/signup",
+  home: "/home",
+  formcreation: "/formcreation",
+};
 
 export default routes;

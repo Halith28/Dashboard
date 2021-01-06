@@ -1,0 +1,7 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: linear-gradient(#000, #000) center/2px 100% no-repeat;
+  grid-gap: 60px;
+  margin: 5px;
+}
