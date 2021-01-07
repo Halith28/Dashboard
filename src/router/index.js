@@ -1,19 +1,29 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
 import routes from "./routes";
+import PrivateRoute from "./private_router";
 
-import { Home, FormCreation } from "./../screens";
+import {
+    Login,
+    SignUp,
+    Home,
+    Profile
+} from './../screens'
 
 const RouterApp = (props) => {
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path={routes.home} component={Home} />
-        <Route path={routes.formcreation} component={FormCreation} />
-      </Switch>
+    return <Router>
+        <Switch>
+            <Route exact path="/" component={Login}/>
+            <Route path={routes.login} component={Login}/>
+            <Route path={routes.signup} component={SignUp}/>
+            <PrivateRoute path={routes.home} component={Home} />
+            <PrivateRoute path={routes.profile} component={Profile} />
+        </Switch>
     </Router>
-  );
-};
+}
 
 export default RouterApp;
