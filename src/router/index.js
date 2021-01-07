@@ -8,8 +8,8 @@ import routes from "./routes";
 import PrivateRoute from "./private_router";
 
 import {
-    Login,
-    SignUp,
+    // Login,
+    // SignUp,
     Home,
     Profile
 } from './../screens'
@@ -17,9 +17,9 @@ import {
 const RouterApp = (props) => {
     return <Router>
         <Switch>
-            <Route exact path="/" component={Login}/>
-            <Route path={routes.login} component={Login}/>
-            <Route path={routes.signup} component={SignUp}/>
+            <Route exact path="/" component={Home}/>
+            {/* <Route path={routes.login} component={Login}/> */}
+            {/* <Route path={routes.signup} component={SignUp}/> */}
             <PrivateRoute path={routes.home} component={Home} />
             <PrivateRoute path={routes.profile} component={Profile} />
         </Switch>
