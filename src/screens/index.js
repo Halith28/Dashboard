@@ -1,2 +1,4 @@
-export { default as Home } from "./home";
-export { default as FormCreation } from "./FormCreation";
+export { default as Login } from './login';
+export { default as SignUp } from './signup';
+export { default as Home } from './home';
+export { default as Profile } from './profile';
