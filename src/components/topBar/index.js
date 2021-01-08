@@ -2,8 +2,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import {Typography, Button} from '@material-ui/core';
+import {Typography, Button, IconButton} from '@material-ui/core';
 import PropTypes from "prop-types";
+import ArrowBackRoundedIcon from '@material-ui/icons/ArrowBackRounded';
+import { useHistory } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -39,13 +42,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const TopBar = (props) => {
-
+  const history = useHistory();
   const classes = useStyles();
+  const goBack = () => {
+    history.goBack();
+  }
 
   return (
     <div className={classes.root}>
       <AppBar position="static" color={"inherit"} elevation={0}>
         <Toolbar variant="dense">
+          {props.goBack && 
+          <IconButton color={"default"} aria-label="upload picture" component="span" onClick={()=>goBack()}>
+            <ArrowBackRoundedIcon />
+          </IconButton>
+          }
           <Typography variant="h6" color="inherit">
             {props.title}
           </Typography>
@@ -65,9 +76,11 @@ TopBar.propTypes = {
     title: PropTypes.string,
     buttonName: PropTypes.string,
     onClickButton: PropTypes.func,
+    goBack: PropTypes.bool,
 }
 
 TopBar.defaultProps = {
+    goBack: false,
     buttonName: null,
     onClickButton: () => {},
 }

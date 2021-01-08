@@ -11,7 +11,7 @@ import {
     // Login,
     // SignUp,
     Home,
-    Profile
+    FormConfigure
 } from './../screens'
 
 const RouterApp = (props) => {
@@ -21,7 +21,7 @@ const RouterApp = (props) => {
             {/* <Route path={routes.login} component={Login}/> */}
             {/* <Route path={routes.signup} component={SignUp}/> */}
             <PrivateRoute path={routes.home} component={Home} />
-            <PrivateRoute path={routes.profile} component={Profile} />
+            <PrivateRoute path={routes.formConfigure} component={FormConfigure} />
         </Switch>
     </Router>
 }

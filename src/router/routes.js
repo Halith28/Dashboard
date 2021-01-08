@@ -2,7 +2,7 @@ const routes={
     login : '/login',
     signup : '/signup',
     home : '/home',
-    profile : '/profile',
+    formConfigure : '/formConfigure',
 }
 
 export default routes;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
 import { localStorageKeys } from '../../utils';
 import routes from '../../router/routes';
 import AppBar from  "../../components/topBar";
@@ -108,6 +109,11 @@ class Home extends React.Component{
         this.setState({...this.state, formModal: false})
     };
 
+    getFromId = (e, object) => {
+        this.props.history.push("/formConfigure");
+    }
+
+    
     render(){
        const { classes } = this.props;
         return <div className={classes.root}>
@@ -119,7 +125,7 @@ class Home extends React.Component{
                     </div>
                      {data.map((list, index)=>{
                          return(
-                             <List key={index} {...list} />
+                             <List key={index} {...list} onClickAction={this.getFromId} />
                          )
                      })}
                 </Container>
@@ -129,4 +135,4 @@ class Home extends React.Component{
     }
 }
 
-export default withStyles(styles)(Home);
+export default withRouter(withStyles(styles)(Home));

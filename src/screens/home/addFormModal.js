@@ -43,7 +43,6 @@ export default function FormDialog(props) {
  const classes = useStyles();
  const [state, setState] = React.useState(null)
  const onChangeSwitch = (e, newAlignment) => {
-     console.log("e-----------",e, newAlignment)
      setState(newAlignment)
  }
   return (

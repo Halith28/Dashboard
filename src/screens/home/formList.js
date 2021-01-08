@@ -33,7 +33,7 @@ export default function List(props) {
                  <Typography variant={"body1"} color={"textSecondary"} >Created by {props.created_by} on {moment(props.created_at).format('ll')}</Typography>
             </Grid>
             <Grid>
-                <Button variant="outlined" color="primary">
+                <Button variant="outlined" color="primary" onClick={(e)=>props.onClickAction(e, props)}>
                      {props.category}
                 </Button>
             </Grid>
