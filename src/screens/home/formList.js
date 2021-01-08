@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: "100%",
       height: "100%",
-      padding: theme.spacing(2)
+      padding: theme.spacing(2),
+      cursor: "pointer"
     },
   },
 }));
@@ -21,7 +22,7 @@ export default function List(props) {
 
   return (
     <div className={classes.root}>
-      <Paper>
+      <Paper onClick={(e)=>props.onClickAction(e, props)}>
         <Grid
             container
             direction="row"

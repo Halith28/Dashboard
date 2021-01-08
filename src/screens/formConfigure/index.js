@@ -25,7 +25,9 @@ const styles = theme => ({
     },
     iteam2: {
         gridArea: "mainArea",
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
+        height: "calc(100vh - 49px)",
+        overflow: "auto",
     },
     mainArea:{
         width: "calc(100vw - 300px)",

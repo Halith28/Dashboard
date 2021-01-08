@@ -8,14 +8,15 @@ import {
   Checkbox,
   Typography,
   TextField,
-  Button
+  Button,
+  Fab
 } from "@material-ui/core";
 import Autocomplete from '@material-ui/lab/Autocomplete';
-
+import AddIcon from '@material-ui/icons/Add';
 
 const componentList = [
-    { title: 'Tab Select', id: 1 },
-    { title: 'Tab Multi-Select', id: 2 },
+    { title: 'Choose an option', id: 1 },
+    { title: 'Choose a range', id: 2 },
 ]
 const defaultProps = {
     options: componentList,
@@ -23,14 +24,22 @@ const defaultProps = {
 };
 
 const useStyles = makeStyles((theme) => ({
-  formComponentArea: {
-    padding: theme.spacing(2),
+  formFields: {
+      paddingBottom: "20px",
+      border: "1px solid rgb(224, 224, 224)",
+      background: "rgb(245, 245, 245)",
   },
   inputFiled: {
       marginBottom: "16px"
   },
   selectComponentList:{
-      marginTop: 0
+      marginTop: 0,
+      color: "red"
+  },
+  addFloatingButton: {
+    position: "absolute",
+    right: "26px",
+    bottom: "30px"
   }
 }));
 
@@ -38,13 +47,13 @@ export default function Form(props) {
   const classes = useStyles();
 
   return (
-    <Paper>
+    <Grid>
       <Grid
         container
         direction="row"
         justify="space-between"
         alignItems="center"
-        style={{ padding: "10px 20px" }}
+        style={{ padding: "10px 20px", background: "#fff" }}
       >
         <Grid>
           <Typography variant={"h6"} style={{fontSize: "17px"}} component={"p"}>
@@ -66,7 +75,10 @@ export default function Form(props) {
       </Grid>
       <Divider />
 
-      <Grid style={{ padding: "20px", backgroundColor: "#F5F5F5" }}>
+
+     <Grid className={classes.formFields}>
+
+      <Grid style={{ padding: "20px", backgroundColor: "#fff" }}>
       <Grid
         container
         direction="row"
@@ -104,53 +116,64 @@ export default function Form(props) {
       </Grid>
       <Divider />
 
-      <Grid style={{ padding: "20px", marginTop: "16px" }}>
-          <Paper style={{ padding: "8px 20px 3px 20px", border: "1px solid #E0E0E0"}} elevation={0} >
-            <Grid container direction="row" justify="space-between" alignItems="center" style={{marginBottom: "20px"}}>
-                <Grid item style={{ width: 300 }}>
-                    <Autocomplete
-                        {...defaultProps}
-                        id="clear-on-escape"
-                        clearOnEscape
-                        renderInput={(params) => <TextField {...params} className={classes.selectComponentList} size="small" placeholder={"Select Filed Type"} fullWidth margin={"dense"} />}
-                    />
-                </Grid>
-                <Grid item>
-                    <FormControlLabel
-                        control={
-                        <Checkbox
-                            checked={true}
-                            //  onChange={handleChange}
-                            name="checkedA"
+      {[1,2,3].map((val, index) => {
+          return(
+            <Grid key={index} style={{ padding: "20px 20px 0px 20px" }}>
+                <Paper style={{ padding: "8px 20px 3px 20px", border: "1px solid #E0E0E0"}} elevation={0} >
+                <Grid container direction="row" justify="space-between" alignItems="center" style={{marginBottom: "20px"}}>
+                    <Grid item style={{ width: 300 }}>
+                        <Autocomplete
+                            {...defaultProps}
+                            id="clear-on-escape"
+                            clearOnEscape
+                            renderInput={(params) => <TextField {...params} className={classes.selectComponentList} size="small" placeholder={"Select Filed Type"} fullWidth margin={"dense"} />}
                         />
-                        }
-                        label="Required"
-                    />
-                    <Button color="primary">{"delete"} </Button>
+                    </Grid>
+                    <Grid item>
+                        <FormControlLabel
+                            control={
+                            <Checkbox
+                                checked={true}
+                                //  onChange={handleChange}
+                                name="checkedA"
+                            />
+                            }
+                            label="Required"
+                        />
+                        <Button color="primary">{"delete"} </Button>
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Grid item className={classes.inputFiled}>  
-              <TextField
-                fullWidth
-                label="Question / title"
-                id="outlined-size-small"
-                variant="outlined"
-                size="small"
-                />
-            </Grid>
-            <Grid item className={classes.inputFiled}>  
-                <TextField
+                <Grid item className={classes.inputFiled}>  
+                    <TextField
                     fullWidth
-                    label="Options"
+                    label="Question / title"
                     id="outlined-size-small"
                     variant="outlined"
                     size="small"
-                />
+                    />
+                </Grid>
+                <Grid item className={classes.inputFiled}>  
+                    <TextField
+                        fullWidth
+                        label="Options"
+                        id="outlined-size-small"
+                        variant="outlined"
+                        size="small"
+                    />
+                </Grid>
+                </Paper>
             </Grid>
-          </Paper>
+          )
+      })}
+
+
+    {/* add floating button */}
+      <Fab color="primary" aria-label="add" className={classes.addFloatingButton}>
+        <AddIcon />
+      </Fab>
+
       </Grid>
 
-
-    </Paper>
+    </Grid>
   );
 }
