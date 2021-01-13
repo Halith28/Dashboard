@@ -1,17 +1,6 @@
-import React, { useEffect } from "react";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Box, Drawer, List, makeStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
-import {
-  Avatar,
-  Box,
-  Button,
-  Divider,
-  Drawer,
-  Hidden,
-  List,
-  Typography,
-  makeStyles,
-} from "@material-ui/core";
+import React, { useEffect } from "react";
 import {
   AlertCircle as AlertCircleIcon,
   BarChart as BarChartIcon,
@@ -22,14 +11,9 @@ import {
   UserPlus as UserPlusIcon,
   Users as UsersIcon,
 } from "react-feather";
-import NavItem from "./NavItem";
+import { useLocation } from "react-router-dom";
 import ReactLogo from "../cells.svg";
-
-const user = {
-  avatar: "/static/images/avatars/avatar_6.png",
-  jobTitle: "Senior Developer",
-  name: "Katarina Smith",
-};
+import NavItem from "./NavItem";
 
 const items = [
   {

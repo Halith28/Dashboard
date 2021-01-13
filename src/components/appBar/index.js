@@ -1,26 +1,15 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { Button, Grid, TextField } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
+import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
-import {
-  Typography,
-  Button,
-  IconButton,
-  Grid,
-  TextField,
-} from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
-import MenuIcon from "@material-ui/icons/Menu";
+import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     borderBottom: "1px solid #ebebeb",
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
   },
   grow: {
     flexGrow: 1,
@@ -72,20 +61,7 @@ const defaultProps = {
 const drawerWidth = 240;
 
 const ApplicationBar = (props) => {
-  const history = useHistory();
   const classes = useStyles();
-  const goBack = () => {
-    history.goBack();
-  };
-
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const state = {
-    mobileOpen: false,
-  };
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((mobileOpen) => ({ mobileOpen: !state.mobileOpen }));
-  };
 
   return (
     <div className={classes.root}>
@@ -119,21 +95,6 @@ const ApplicationBar = (props) => {
           </div>
         </Toolbar>
       </AppBar>
-      {/* <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="Open drawer"
-            onClick={handleDrawerToggle}
-            className={classes.menuButton}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" color="inherit" noWrap>
-            Responsive drawer
-          </Typography>
-        </Toolbar>
-      </AppBar> */}
     </div>
   );
 };

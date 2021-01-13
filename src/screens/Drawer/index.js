@@ -1,31 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { Button, Grid, TextField } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import MailIcon from "@material-ui/icons/Mail";
-import MenuIcon from "@material-ui/icons/Menu";
+import { withStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
-import Todolist from "../Dashboard/todolist";
-import Table from "../Dashboard/table";
+import MenuIcon from "@material-ui/icons/Menu";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import PropTypes from "prop-types";
+import React from "react";
 import Report from "../Dashboard/report";
 import Screenshots from "../Dashboard/screenshots";
-import { Grid } from "@material-ui/core";
+import Table from "../Dashboard/table";
+import Todolist from "../Dashboard/todolist";
 import DashboardLayout from "../DashboardLayout";
-import ApplicationBar from "../../components/appBar";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import { Button, TextField, Fab } from "@material-ui/core";
-import AddIcon from "@material-ui/icons/Add";
 
 const drawerWidth = 240;
 
@@ -75,8 +66,6 @@ const styles = (theme) => ({
   },
   content: {
     marginTop: 50,
-    // backgroundColor: "white",
-    // padding: theme.spacing.unit * 1,
   },
   grow: {
     flexGrow: 1,

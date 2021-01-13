@@ -1,37 +1,23 @@
-import React from "react";
+import { Divider, Grid, Typography, withStyles } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import React from "react";
 import { withRouter } from "react-router-dom";
-import {
-  withStyles,
-  Grid,
-  Typography,
-  Button,
-  CardHeader,
-  Divider,
-  Box,
-  MenuItem,
-  Paper,
-} from "@material-ui/core";
-import From from "../formConfigure/formGenerator";
 import ApplicationBar from "../../components/appBar";
-import Todolist from "./todolist";
-import Table from "./table";
+import DashboardLayout from "../DashboardLayout";
 import Report from "./report";
 import Screenshots from "./screenshots";
-import DashboardLayout from "../DashboardLayout";
+import Table from "./table";
+import Todolist from "./todolist";
 
 const styles = (theme) => ({
   root: {
-    // backgroundColor: "#ebebeb",
     flex: 1,
   },
   gridArea: {
     display: "grid",
     gridGap: "1px",
     height: "100%",
-    // },
-    // gridContainerFull: {
     gridTemplateAreas: `'menu mainArea'`,
     gridTemplateColumns: "250px 1fr",
   },

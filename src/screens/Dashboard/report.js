@@ -4,8 +4,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import Avatar from "@material-ui/core/Avatar";
 import CardHeader from "@material-ui/core/CardHeader";
 import { Paper } from "@material-ui/core";
 import ReportIcon1 from "../../components/line-chart.svg";
@@ -17,9 +15,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  //   menuButton: {
-  //     marginRight: theme.spacing(2),
-  //   },
   title: {
     flexGrow: 1,
   },

@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from "react";
-import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { Button, Fab, Grid, TextField } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Divider from "@material-ui/core/Divider";
+import Drawer from "@material-ui/core/Drawer";
+import IconButton from "@material-ui/core/IconButton";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import DashboardLayout from "../DashboardLayout";
+import MenuIcon from "@material-ui/icons/Menu";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import { Button, TextField, Fab, Grid } from "@material-ui/core";
-import AddIcon from "@material-ui/icons/Add";
-import Todolist from "../Dashboard/todolist";
-import Table from "../Dashboard/table";
+import clsx from "clsx";
+import moment from "moment";
+import React, { useEffect, useState } from "react";
+import Loading from "../../components/Loading";
 import Report from "../Dashboard/report";
 import Screenshots from "../Dashboard/screenshots";
-import moment from "moment";
-import Loading from "../../components/Loading";
+import Table from "../Dashboard/table";
+import Todolist from "../Dashboard/todolist";
+import DashboardLayout from "../DashboardLayout";
 
 const drawerWidth = 240;
 
@@ -61,8 +60,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    // ...theme.mixins.toolbar,
     justifyContent: "flex-end",
   },
   content: {

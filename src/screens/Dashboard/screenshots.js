@@ -1,14 +1,13 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { Divider } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import CardHeader from "@material-ui/core/CardHeader";
+import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import Avatar from "@material-ui/core/Avatar";
-import CardHeader from "@material-ui/core/CardHeader";
-import { Divider, Grid } from "@material-ui/core";
 import ImageIcon from "@material-ui/icons/Image";
+import React from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {

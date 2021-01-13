@@ -1,8 +1,5 @@
 import React from "react";
 import "./styles.css";
-import logo from "./logo.jpg";
-import csk from "./csklogo.svg";
-import Reactlogo from "../timer.svg";
 
 const Loading = () => {
   return (
