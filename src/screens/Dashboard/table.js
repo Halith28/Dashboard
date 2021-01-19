@@ -46,27 +46,37 @@ const useStyles = makeStyles((theme) => ({
   tableStyle : {
     paddingRight: theme.spacing.unit * 3,
     paddingLeft: theme.spacing.unit * 3,
+  },
+  columnData:{
+    marginLeft: 10,
   }
 }));
 
 
 function createData(name, calories, fat, carbs, protein) {
+  
   return { name, calories, fat, carbs, protein };
 }
 
 const rows = [
-  createData((<div style={{display:"inline"}}>
-    {/* <Grid item sm={2}>
-    <Box bgcolor="primary.main" color="primary.contrastText" textAlign="center">
-      1
-    </Box>
-  </Grid> */}
-  <Avatar variant="square" style={{borderRadius:5}}> 1</Avatar><span>Landing</span>
+  createData((<div style={{display:"inline-flex", alignItems:"center"}}>
+  <Avatar variant="square" style={{borderRadius:5, backgroundColor: "#dcdbea",color:"#554daa"}}> 1</Avatar>
+  <span style={{marginLeft:20}}>Landing pane Design</span>
   </div>), "May 21,2019", "1:10pm", "9:20pm", "8:10:37"),
-  createData("Mobile App", "May 22,2019", "12:00pm", "8:00pm", "8:00:00"),
-  createData("UI/UX", "May 23,2019", "1:10pm", "1:20pm", "0:10:37"),
-  createData("Website/Apps", "May 24,2019", "1:11pm", "9:00pm", "7:49:37"),
-  // createData("Eclair", 262, 16.0, 24, 6.0),
+  createData((<div style={{display:"inline-flex", alignItems:"center"}}>
+  <Avatar variant="square" style={{borderRadius:5, backgroundColor: "#f5f1e3",color:"#caae5e"}}> 3</Avatar>
+  <span style={{marginLeft:20}}>Mobile App</span>
+  </div>), "May 22,2019", "12:00pm", "8:00pm", "8:00:00"),
+  createData(
+    (<div style={{display:"inline-flex", alignItems:"center"}}>
+  <Avatar variant="square" style={{borderRadius:5, backgroundColor: "#fae9ed",color:"#fd7a9a"}}> 5</Avatar>
+  <span style={{marginLeft:20}}>UI/UX</span>
+  </div>), "May 23,2019", "1:10pm", "1:20pm", "0:10:37"),
+  createData(
+    (<div style={{display:"inline-flex", alignItems:"center"}}>
+  <Avatar variant="square" style={{borderRadius:5, backgroundColor: "#faede2",color:"#4475c7"}}> 2</Avatar>
+  <span style={{marginLeft:20}}>Website/Apps</span>
+  </div>), "May 24,2019", "1:11pm", "9:00pm", "7:49:37"),
 ];
 
 const MainTable = () => {

@@ -53,7 +53,7 @@ const Report = () => {
           }
           title={
             <div >
-              {"Weekly Activity"}
+              <span style={{opacity:0.4}}>{"WEEKLY ACTIVITY"}</span>
               <h4>52%</h4>
             </div>
           }
@@ -76,7 +76,7 @@ const Report = () => {
           }
           title={
             <div>
-              {"Worked this week"}
+              {"WORKED THIS WEEK"}
               <h4>11:56:33</h4>
             </div>
           }

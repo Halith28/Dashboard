@@ -19,9 +19,6 @@ import GetAppOutlinedIcon from '@material-ui/icons/GetAppOutlined';
 import EventAvailableOutlinedIcon from '@material-ui/icons/EventAvailableOutlined';
 import ReceiptOutlinedIcon from '@material-ui/icons/ReceiptOutlined';
 
-// const NavBreak = () => {
-//   return <img src={Break} alt="allah" height="10px" width="30px" style={{color:"white"}}></img>
-// }
 
 const items = [
   {
@@ -115,10 +112,12 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           
           <Group11 items={items.slice(0,3)} />
           <Divider style={{backgroundColor: "white",
-    width: "18px",
-    margin: "15px 10px"}} />
+            width: "18px",
+            margin: "15px 10px"}} />
           <Group11 items={items.slice(3,6)} />
-          <Divider />
+          <Divider style={{backgroundColor: "white",
+            width: "18px",
+            margin: "15px 10px"}} />
           <Group11 items={items.slice(6,8)} />
         </List>
 

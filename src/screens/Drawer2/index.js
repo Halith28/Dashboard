@@ -86,13 +86,13 @@ const useStyles = makeStyles((theme) => ({
     top: "45px",
     // borderRadius: "100% 0% 0% 100% / 46% 34% 66% 54% ",
   },
-  addFloatingButton2: {
-    position: "absolute",
-    left: "230px",
-    top: "100px",
-    zIndex: 3000,
-    // borderRadius: "100% 0% 0% 100% / 46% 34% 66% 54% ",
-  },
+  // addFloatingButton2: {
+  //   position: "absolute",
+  //   left: "230px",
+  //   top: "100px",
+  //   zIndex: 3000,
+  //   // borderRadius: "100% 0% 0% 100% / 46% 34% 66% 54% ",
+  // },
   grow: {
     flexGrow: 1,
   },
@@ -113,6 +113,15 @@ const useStyles = makeStyles((theme) => ({
       color: "white"
     }
   },
+  // fab:{
+  //   top: "34px",
+  //   left: "230px",
+  //   position: "absolute",
+  //   padding: "10px",
+  //   backgroundColor: "white",
+  //   borderRadius: "45%",
+  //   zIndex: 3000,
+  // }
 }));
 
 const todayDate = moment();
@@ -206,7 +215,7 @@ export default function PersistentDrawerLeft() {
         
       </AppBar>
       {open && (
-          <div>
+          <div classname={classes.fab}>
           <Fab
             style={{ backgroundColor: "#ecbf41" }}
             size="small"
