@@ -14,17 +14,26 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Avatar} from "@material-ui/core";
+import "./styles.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     paddingTop: "20px",
     paddingBottom: "20px",
+    "& .MuiAvatar-root" :{
+      height: "30px",
+      width: "30px",
+    },
+    "& .MuiTableCell-root":{
+      padding:8,
+    }
   },
   topBar : {
     paddingBottom: theme.spacing.unit * 1,
   },
   topbarButton: {
+    fontSize: 12,
     marginRight: theme.spacing(2),
     backgroundColor: "#e9e8f4",
     color: "#382f9c",
@@ -50,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
   columnData:{
     marginLeft: 10,
   }
+
 }));
 
 

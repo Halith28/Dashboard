@@ -12,6 +12,19 @@ import React from "react";
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(0, 2),
+    "& .MuiCardHeader-action": {
+      marginRight: -10,
+      marginLeft: 0,
+      // padding: 10,
+    },
+    "& .MuiAvatar-root": {
+      width: "30px",
+      height: "30px"
+    },
+    "& .MuiButton-containedSizeSmall": {
+      padding: "0px 10px",
+      marginTop: "11px",
+    }
   },
   button :{
     backgroundColor: "#e9e8f4",
@@ -47,8 +60,8 @@ const Screenshots = () => {
                   <ImageIcon />
                 </Avatar>
               }
-              action={<Button variant="contained" className={classes.button}>View</Button>}
-              title="Shot_1_attach_1.png"
+              action={<Button variant="contained" size="small" className={classes.button}>View</Button>}
+              title="Shot_1_attach.png"
             />
             <Divider />
           </div>

@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
     }),
     backgroundColor: "white",
     zIndex: 2000,
+    boxShadow:
+  "0 6px 50px -27px rgba(0, 0, 0, 0.26)"
+
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -92,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
   },
   fab:{
     zIndex:3000,
-    position:'absolute',
+    position:'fixed',
     left:220,
     backgroundColor:'white',
     top:43,
@@ -106,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "20px",
   },
   topbarButton: {
-    fontSize: "16px",
+    fontSize: "14px",
     marginRight: theme.spacing(2),
     backgroundColor: "#e9e8f4",
     color: "#382f9c",
@@ -172,7 +175,7 @@ export default function PersistentDrawerLeft() {
       <CssBaseline />
       <AppBar
         position="fixed"
-        elevation={1}
+        elevation={0}
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
@@ -237,18 +240,6 @@ export default function PersistentDrawerLeft() {
       >
         <DashboardLayout />
       </Drawer>
-      {/* <Hidden mdDown>
-            <Drawer
-              classes={{
-                paper: classes.drawerPaper,
-              }}
-              variant="permanent"
-              open={open}
-              onClose={handleDrawerClose}
-            >
-              <DashboardLayout />
-            </Drawer>
-          </Hidden> */}
       
       <main
         className={clsx(classes.content, {
@@ -265,7 +256,7 @@ export default function PersistentDrawerLeft() {
                 md={6}
                 xs={12}
                 style={{
-                  height: "370px",
+                  height: "350px",
                   overflowY: "auto",
                   // padding: "10px"
                 }}
@@ -300,7 +291,7 @@ export default function PersistentDrawerLeft() {
                 lg={12}
                 md={6}
                 xs={10}
-                style={{ height: "370px", padding: "20px" }}
+                style={{ height: "350px", padding: "20px" }}
                 className="border border-light"
               >
                 <Report />

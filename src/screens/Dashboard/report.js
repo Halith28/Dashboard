@@ -15,9 +15,16 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    "& .MuiCardHeader-action": {
+      marginRight: 0,
+      marginLeft: 0,
+      // padding: 10,
+      paddingTop: 10
+    }
   },
   title: {
     flexGrow: 1,
+    fontSize: 10,
   },
   table: {
     minWidth: 450,
@@ -27,10 +34,10 @@ const useStyles = makeStyles((theme) => ({
 const Report = () => {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.root}>
       <AppBar position="static" color="inherit" elevation={0}>
         <Toolbar variant="dense">
-          <Typography variant="h6" className={classes.title} style={{fontWeight:"1000"}}>
+          <Typography variant="h6"  style={{fontWeight:"1000"}}>
             Report
           </Typography>
         </Toolbar>
@@ -44,7 +51,7 @@ const Report = () => {
         }}
       >
         <CardHeader
-          avatar={<Avatar variant="square" style={{backgroundColor:"#534ba9", height:"60px" ,width:"60px"}}><img src={ReportIcon1} alt="React Logo" /></Avatar>}
+          avatar={<Avatar variant="square" style={{backgroundColor:"#534ba9", height:"40px" ,width:"40px"}}><img src={ReportIcon1} alt="React Logo" /></Avatar>}
           action={
             <Button style={{ backgroundColor: "#39c084", color: "white" }}>
               <ArrowDropUpIcon />
@@ -52,7 +59,7 @@ const Report = () => {
             </Button>
           }
           title={
-            <div >
+            <div className={classes.title}>
               <span style={{opacity:0.4}}>{"WEEKLY ACTIVITY"}</span>
               <h4>52%</h4>
             </div>
@@ -67,7 +74,7 @@ const Report = () => {
         }}
       >
         <CardHeader
-          avatar={<Avatar variant="square" style={{backgroundColor:"white", height:"60px" ,width:"60px"}}><img src={ReportIcon2} alt="React Logo" /></Avatar>}
+          avatar={<Avatar variant="square" style={{backgroundColor:"white", height:"40px" ,width:"40px"}}><img src={ReportIcon2} alt="React Logo" /></Avatar>}
           action={
             <Button style={{ backgroundColor: "#eecfcf", color: "red" }}>
               <ArrowDropDownIcon />
@@ -75,7 +82,7 @@ const Report = () => {
             </Button>
           }
           title={
-            <div>
+            <div className={classes.title}>
               {"WORKED THIS WEEK"}
               <h4>11:56:33</h4>
             </div>

@@ -13,12 +13,16 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: "100%",
       height: "100%",
-      // padding: theme.spacing(2),
+      paddingRight: theme.spacing(3),
+      paddingLeft: theme.spacing(3),
       cursor: "pointer",
     },
     menuButton: {
       marginRight: theme.spacing(2),
     },
+    "& .MuiTypography-h6":{
+      fontSize: "1.00rem"
+    }
   },
 }));
 
@@ -34,7 +38,7 @@ const Todolist = (props) => {
             subheader={moment(props.created_at).format("MMM")}
           />
         </Grid>
-        <Grid item lg={10}>
+        <Grid item lg={10} sm={10}>
           <Paper className={classes.root}>
             <Grid
               container
@@ -42,7 +46,7 @@ const Todolist = (props) => {
               justify="space-between"
               alignItems="center"
             >
-              <Grid>
+              <Grid item p={2}>
                 <Typography variant={"h6"} component={"p"}>
                   {props.form_name}
                 </Typography>
@@ -50,7 +54,7 @@ const Todolist = (props) => {
                   {props.status}
                 </Typography>
               </Grid>
-              <Grid>
+              <Grid item >
                 <IconButton
                   edge="start"
                   className={classes.menuButton}

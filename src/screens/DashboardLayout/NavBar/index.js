@@ -2,10 +2,7 @@ import { Box, Divider, Drawer, List, makeStyles } from "@material-ui/core";
 import PropTypes from "prop-types";
 import React, { useEffect } from "react";
 import {
-  BarChart as BarChartIcon,
   Settings as SettingsIcon,
-  ShoppingBag as ShoppingBagIcon,
-  Users as UsersIcon,
   HelpCircle as Help,
   Folder as ProjectIcon,
 } from "react-feather";
@@ -18,29 +15,34 @@ import IconButton from '@material-ui/core/IconButton';
 import GetAppOutlinedIcon from '@material-ui/icons/GetAppOutlined';
 import EventAvailableOutlinedIcon from '@material-ui/icons/EventAvailableOutlined';
 import ReceiptOutlinedIcon from '@material-ui/icons/ReceiptOutlined';
+import SpeedIcon from '@material-ui/icons/Speed';
+import AvTimerIcon from '@material-ui/icons/AvTimer';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import ReportIcon1 from "../../../components/line-chart.svg";
+import ReportIcon2 from "../../../components/timer.svg";
 
+const icon = ({image}) => {
+  return(
+    <img src={ReportIcon1} alt="React Logo" height="20px" width="20px" style={{color:"black"}} />
+  )
+}
 
 const items = [
   {
     href: "/dashboard",
-    icon: BarChartIcon,
+    icon: SpeedIcon,
     title: "Dashboard",
   },
   {
     href: "/drawer",
-    icon: UsersIcon,
+    icon: TimelineIcon,
     title: "Activity",
   },
   {
     href: "/drawer2",
-    icon: ShoppingBagIcon,
+    icon: AvTimerIcon,
     title: "Timesheet",
   },
-  // {
-  //   href: "/none",
-  //   icon: RemoveIcon,
-  //   title: "",
-  // },
   {
     href: "/app/account",
     icon: EventAvailableOutlinedIcon,
@@ -56,12 +58,6 @@ const items = [
     icon: ProjectIcon,
     title: "Projects",
   },
-  // {
-  //   href: "/none",
-  //   icon: RemoveIcon,
-  //   title: "",
-  //   disable: true,
-  // },
   {
     href: "/help",
     icon: Help,
@@ -104,7 +100,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
 
   const content = (
     <Box height="100%" display="flex" flexDirection="column">
-      <Box p={3}>
+      <Box p={3} height="5%">
         <img src={ReactLogo} alt="React Logo" />
       </Box>
       <Box p={2}>
