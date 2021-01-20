@@ -18,14 +18,7 @@ import ReceiptOutlinedIcon from '@material-ui/icons/ReceiptOutlined';
 import SpeedIcon from '@material-ui/icons/Speed';
 import AvTimerIcon from '@material-ui/icons/AvTimer';
 import TimelineIcon from '@material-ui/icons/Timeline';
-import ReportIcon1 from "../../../components/line-chart.svg";
-import ReportIcon2 from "../../../components/timer.svg";
 
-const icon = ({image}) => {
-  return(
-    <img src={ReportIcon1} alt="React Logo" height="20px" width="20px" style={{color:"black"}} />
-  )
-}
 
 const items = [
   {
