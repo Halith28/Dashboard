@@ -1,4 +1,4 @@
-import { Button, Fab, Grid, TextField } from "@material-ui/core";
+import { Button, Grid, TextField } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Divider from "@material-ui/core/Divider";
@@ -81,18 +81,24 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
   },
   addFloatingButton: {
-    position: "absolute",
-    left: "-10px",
-    top: "45px",
-    // borderRadius: "100% 0% 0% 100% / 46% 34% 66% 54% ",
+    backgroundColor: "#BD9A36",
+    width:24,
+    height:24,
+    borderRadius:'50%',
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    color:'white'
   },
-  // addFloatingButton2: {
-  //   position: "absolute",
-  //   left: "230px",
-  //   top: "100px",
-  //   zIndex: 3000,
-  //   // borderRadius: "100% 0% 0% 100% / 46% 34% 66% 54% ",
-  // },
+  fab:{
+    zIndex:3000,
+    position:'absolute',
+    left:220,
+    backgroundColor:'white',
+    top:43,
+    padding:'8px 0px 8px 8px',        
+    borderRadius: "100% 0% 0% 100% / 46% 34% 66% 54% ",
+  },
   grow: {
     flexGrow: 1,
   },
@@ -113,15 +119,6 @@ const useStyles = makeStyles((theme) => ({
       color: "white"
     }
   },
-  // fab:{
-  //   top: "34px",
-  //   left: "230px",
-  //   position: "absolute",
-  //   padding: "10px",
-  //   backgroundColor: "white",
-  //   borderRadius: "45%",
-  //   zIndex: 3000,
-  // }
 }));
 
 const todayDate = moment();
@@ -155,7 +152,7 @@ const defaultProps = {
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const [spinner, setSpinner] = useState(true);
 
   useEffect(() => {
@@ -215,23 +212,17 @@ export default function PersistentDrawerLeft() {
         
       </AppBar>
       {open && (
-          <div classname={classes.fab}>
-          <Fab
-            style={{ backgroundColor: "#ecbf41" }}
-            size="small"
-            className={classes.addFloatingButton}
-            onClick={handleDrawerClose}
-          >
-            <div className={classes.drawerHeader}>
-              <IconButton onClick={handleDrawerClose}>
-                {theme.direction === "ltr" ? (
-                  <ChevronLeftIcon />
-                ) : (
-                  <ChevronRightIcon />
-                )}
-              </IconButton>
+          <div className={classes.fab}>
+            <div
+              className={classes.addFloatingButton}
+              onClick={handleDrawerClose}
+            >
+                  {theme.direction === "ltr" ? (
+                    <ChevronLeftIcon />
+                  ) : (
+                    <ChevronRightIcon />
+                  )}
             </div>
-          </Fab>
           </div>
         )}
       
