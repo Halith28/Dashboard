@@ -46,7 +46,7 @@ const Report = () => {
         style={{
           borderRadius: "15px",
           backgroundColor: "#382f9c",
-          margin: "15px 15px 5px 15px",
+          margin: "8px 15px 5px 15px",
           color: "white",
         }}
       >

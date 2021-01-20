@@ -270,8 +270,8 @@ export default function PersistentDrawerLeft() {
                 lg={12}
                 md={6}
                 xs={12}
-                style={{ height: "360px" }}
-                className="border border-light"
+                style={{ height: "auto" }}
+                className="border border-light mb-1"
               >
                 <AppBar position="static" color="inherit" elevation={0} className={classes.todoTopBar}>
                   <Toolbar variant="dense">

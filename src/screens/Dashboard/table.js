@@ -24,9 +24,15 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiAvatar-root" :{
       height: "30px",
       width: "30px",
+      fontSize: "1.0rem",
+      fontWeight: 1000,
     },
     "& .MuiTableCell-root":{
       padding:8,
+    },
+    "& .MuiButton-contained": {
+      boxShadow: "0 0px 80px -27px rgba(0, 0, 0, 0)"
+
     }
   },
   topBar : {

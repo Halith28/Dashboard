@@ -20,10 +20,15 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   icon: {
-    marginRight: theme.spacing(3),
+    // marginRight: theme.spacing(3),
+    width: 50,
+    marginLeft: "-10px",
+    // marginTop: 6,
   },
   title: {
     marginRight: "auto",
+    marginLeft: "10px",
+    marginTop: "-7px",
   },
   active: {
     color: "white",
@@ -52,7 +57,9 @@ const NavItem = ({ className, href, icon: Icon, title, disable, ...rest }) => {
         to={href}
         disabled={disable}
       >
+        <div style={{float:"left"}}>
         {Icon && <Icon className={classes.icon} size="20" />}
+        </div>
         <span className={classes.title}>{title}</span>
       </Button>
     </ListItem>

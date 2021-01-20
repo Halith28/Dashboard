@@ -9,14 +9,13 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
-    "& > *": {
-      margin: theme.spacing(1),
+   
+      // margin: theme.spacing(1),
       width: "100%",
       height: "100%",
       paddingRight: theme.spacing(3),
       paddingLeft: theme.spacing(3),
       cursor: "pointer",
-    },
     menuButton: {
       marginRight: theme.spacing(2),
     },
@@ -24,6 +23,19 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "1.00rem"
     }
   },
+  listGrid: {
+    paddingTop: "10px",
+    // paddingBottom: "10px",
+    "& .MuiTypography-h5": {
+      fontWeight: 500,
+    },
+    "& .MuiCardHeader-subheader": {
+      fontWeight: 500,
+    },
+    "& .MuiTypography-colorTextSecondary":{
+      color: "black",
+    }
+  }
 }));
 
 const Todolist = (props) => {
@@ -31,7 +43,7 @@ const Todolist = (props) => {
 
   return (
     <div className="mt-0">
-      <Grid container>
+      <Grid container className={classes.listGrid}>
         <Grid item lg={1} className="ml-2">
           <CardHeader
             title={moment(props.created_at).format("D")}

@@ -18,6 +18,7 @@ import ReceiptOutlinedIcon from '@material-ui/icons/ReceiptOutlined';
 import SpeedIcon from '@material-ui/icons/Speed';
 import AvTimerIcon from '@material-ui/icons/AvTimer';
 import TimelineIcon from '@material-ui/icons/Timeline';
+import Badge from '@material-ui/core/Badge';
 
 
 const items = [
@@ -78,6 +79,17 @@ const useStyles = makeStyles(() => ({
     width: 64,
     height: 64,
   },
+  footer: {
+  "& .MuiBadge-anchorOriginTopRightRectangle": {
+    top: "2px",
+    right: "11px",
+  },
+  "& .MuiBadge-badge": {
+    height: "12px",
+    width: "10px",
+    minWidth: 0,
+  },
+},
 }));
 
 const NavBar = ({ onMobileClose, openMobile }) => {
@@ -100,22 +112,29 @@ const NavBar = ({ onMobileClose, openMobile }) => {
         <List>
           
           <Group11 items={items.slice(0,3)} />
-          <Divider style={{backgroundColor: "white",
+          <Divider style={{backgroundColor: "#b3b3cc",
+          height:"2px",
             width: "18px",
-            margin: "15px 10px"}} />
+            margin: "15px 13px"}} />
           <Group11 items={items.slice(3,6)} />
-          <Divider style={{backgroundColor: "white",
+          <Divider style={{backgroundColor: "#b3b3cc",
+          height:"2px",
             width: "18px",
-            margin: "15px 10px"}} />
+            margin: "15px 13px"}} />
           <Group11 items={items.slice(6,8)} />
         </List>
 
       </Box>
       <Box flexGrow={1} />
-      <Box p={1}>
+      <Box p={1} className={classes.footer}>
+      
+      
         <IconButton style={{color:"white"}}>
+        <Badge badgeContent={2} color="secondary">
   <NotificationsNoneIcon />
+  </Badge>
 </IconButton>
+
 <IconButton style={{ marginLeft:"40px",color:"white"}}>
 <SettingsIcon />
 </IconButton>
