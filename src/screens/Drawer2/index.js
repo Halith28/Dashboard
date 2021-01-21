@@ -123,14 +123,33 @@ const useStyles = makeStyles((theme) => ({
     "&:focus": {
       backgroundColor: "#382f9c",
       color: "white"
-    }
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 10,
+      marginRight: 0,
+    },
   },
   selectBox: {
-    maxWidth: 200, 
+    width: 210, 
     marginLeft: 10,
     [theme.breakpoints.down('sm')]: {
       marginLeft: 0,
+      maxWidth: 150,
     },
+  },
+  Screenshots: {
+    height: 360,
+    padding: 20,
+    [theme.breakpoints.down('sm')]: {
+      padding: 0,
+    }
+  },
+  listStyle: {
+    height: "auto",
+    paddingLeft: "10px",
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: "10px",
+    }
   }
 }));
 
@@ -283,7 +302,6 @@ export default function PersistentDrawerLeft() {
                 lg={12}
                 md={6}
                 xs={12}
-                style={{ height: "auto" }}
                 className="border border-light mb-1"
               >
                 <AppBar position="static" color="inherit" elevation={0} className={classes.todoTopBar}>
@@ -291,9 +309,11 @@ export default function PersistentDrawerLeft() {
                     <Typography variant="h6" style={{fontWeight:"1000"}}>To-Do lists</Typography>
                   </Toolbar>
                 </AppBar>
+                <div className={classes.listStyle}>
                 {data.map((list, index) => {
                   return <Todolist key={index} {...list} />;
                 })}
+                </div>
               </Grid>
             </Grid>
           </Grid>
@@ -305,8 +325,7 @@ export default function PersistentDrawerLeft() {
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ height: "350px", padding: "20px" }}
-                className="border border-light"
+                className={clsx(classes.Screenshots, "border border-light")}
               >
                 <Report />
               </Grid>
@@ -316,8 +335,7 @@ export default function PersistentDrawerLeft() {
                 md={6}
                 sm={12}
                 xs={12}
-                style={{ height: "360px" ,padding: "20px"}}
-                className="border border-light"
+                className={clsx(classes.Screenshots, "border border-light")}
               >
                 <Screenshots />
               </Grid>
