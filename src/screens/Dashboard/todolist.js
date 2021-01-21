@@ -46,13 +46,13 @@ const Todolist = (props) => {
   return (
     <div className="mt-0">
       <Grid container className={classes.listGrid}>
-        <Grid item lg={1} className="ml-2">
+        <Grid item lg={1} xs={2} className="ml-2">
           <CardHeader
             title={moment(props.created_at).format("D")}
             subheader={moment(props.created_at).format("MMM")}
           />
         </Grid>
-        <Grid item lg={10} sm={10}>
+        <Grid item lg={10} sm={10} xs={9}>
           <Paper className={classes.root}>
             <Grid
               container

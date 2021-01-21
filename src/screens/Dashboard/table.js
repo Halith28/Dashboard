@@ -14,11 +14,11 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Avatar} from "@material-ui/core";
+import clsx from "clsx";
 import "./styles.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
     paddingTop: "20px",
     paddingBottom: "20px",
     "& .MuiAvatar-root" :{
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   table: {
-    minWidth: 450,
+    minWidth: "100%",
   },
   tableStyle : {
     paddingRight: theme.spacing.unit * 3,
@@ -115,10 +115,10 @@ const MainTable = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <TableContainer component={Paper} elevation={0} className={classes.tableStyle}>
+      <div className={classes.tableStyle}>
+      <TableContainer component={Paper} elevation={0} >
         <Table
-          className="table-striped table-bordered"
-          aria-label="simple table"
+        className={clsx(classes.table, "table-striped table-bordered")}
         >
           <TableHead>
             <TableRow>
@@ -144,6 +144,7 @@ const MainTable = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      </div>
     </div>
   );
 };

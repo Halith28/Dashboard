@@ -49,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      padding: 0,
+    },
   },
   hide: {
     display: "none",
@@ -122,6 +125,13 @@ const useStyles = makeStyles((theme) => ({
       color: "white"
     }
   },
+  selectBox: {
+    maxWidth: 200, 
+    marginLeft: 10,
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: 0,
+    },
+  }
 }));
 
 const todayDate = moment();
@@ -190,7 +200,7 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Grid item style={{ width: 200, marginLeft: 10 }}>
+          <Grid item className={classes.selectBox}>
             <Autocomplete
               {...defaultProps}
               id="clear-on-escape"
@@ -247,9 +257,9 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Grid container>
-          <Grid item lg={8} md={12} sm={12} xs={12}>
-            <Grid container>
+        <Grid container sm={12} xs={12} style={{padding:0}}>
+          <Grid item lg={8} md={12} sm={12} xs={12} >
+            <Grid container style={{padding:0}}>
               <Grid
                 item
                 lg={12}
@@ -258,8 +268,9 @@ export default function PersistentDrawerLeft() {
                 xs={12}
                 style={{
                   height: "350px",
-                  overflowY: "auto",
-                  overflowX: "auto",
+                  width:"100px",
+                  // overflowY: "auto",
+                  // overflowX: "auto",
                   // padding: "10px"
                 }}
                 className="border border-light"
