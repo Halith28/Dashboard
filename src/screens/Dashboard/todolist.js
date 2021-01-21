@@ -24,12 +24,14 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   listGrid: {
-    paddingTop: "10px",
+    paddingTop: "15px",
     // paddingBottom: "10px",
     "& .MuiTypography-h5": {
+      fontSize: "1.2118rem",
       fontWeight: 500,
     },
     "& .MuiCardHeader-subheader": {
+      fontSize: ".9rem",
       fontWeight: 500,
     },
     "& .MuiTypography-colorTextSecondary":{

@@ -248,16 +248,18 @@ export default function PersistentDrawerLeft() {
       >
         <div className={classes.drawerHeader} />
         <Grid container>
-          <Grid item lg={8} md={12}>
+          <Grid item lg={8} md={12} sm={12} xs={12}>
             <Grid container>
               <Grid
                 item
                 lg={12}
                 md={6}
+                sm={12}
                 xs={12}
                 style={{
                   height: "350px",
                   overflowY: "auto",
+                  overflowX: "auto",
                   // padding: "10px"
                 }}
                 className="border border-light"
@@ -290,7 +292,8 @@ export default function PersistentDrawerLeft() {
                 item
                 lg={12}
                 md={6}
-                xs={10}
+                sm={12}
+                xs={12}
                 style={{ height: "350px", padding: "20px" }}
                 className="border border-light"
               >
@@ -300,7 +303,8 @@ export default function PersistentDrawerLeft() {
                 item
                 lg={12}
                 md={6}
-                xs={10}
+                sm={12}
+                xs={12}
                 style={{ height: "360px" ,padding: "20px"}}
                 className="border border-light"
               >

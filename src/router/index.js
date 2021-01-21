@@ -17,7 +17,7 @@ const RouterApp = (props) => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={PersistentDrawerLeft} />
         {/* <Route path={routes.login} component={Login}/> */}
         {/* <Route path={routes.signup} component={SignUp}/> */}
         <PrivateRoute path={routes.home} component={Home} />

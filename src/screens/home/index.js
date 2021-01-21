@@ -56,7 +56,7 @@ const data = [
 const styles = theme => ({
     root: {
         backgroundColor: "#ebebeb",
-        flex: 1
+        // flex: 1
     },
     mainArea: {
         backgroundColor: "#ebebeb",
